@@ -78,6 +78,12 @@
   <LocaleResource Name="Account.BackInStockSubscriptions.ProductColumn">
     <Value>Product</Value>
   </LocaleResource>
+  <LocaleResource Name="Account.Courses">
+    <Value>My courses</Value>
+  </LocaleResource>
+  <LocaleResource Name="Account.Courses.NoExists">
+    <Value>You don't have any courses</Value>
+  </LocaleResource>
   <LocaleResource Name="Account.ChangePassword">
     <Value>Change password</Value>
   </LocaleResource>
@@ -192,14 +198,17 @@
   <LocaleResource Name="Account.CustomerAuctions.Status.Outbid">
     <Value>Outbid</Value>
   </LocaleResource>
+  <LocaleResource Name="Account.CustomerCourses">
+    <Value>My courses</Value>
+  </LocaleResource>
+  <LocaleResource Name="Account.CustomerDocuments">
+    <Value>Documents</Value>
+  </LocaleResource>
   <LocaleResource Name="Account.CustomerExportToXls">
     <Value>Export data</Value>
   </LocaleResource>
   <LocaleResource Name="Account.CustomerInfo">
     <Value>Customer info</Value>
-  </LocaleResource>
-  <LocaleResource Name="Account.CustomerDocuments">
-    <Value>Documents</Value>
   </LocaleResource>
   <LocaleResource Name="Account.CustomerNotes">
     <Value>Customer notes</Value>
@@ -330,11 +339,11 @@
   <LocaleResource Name="Account.Documents.DocDate">
     <Value>Doc date</Value>
   </LocaleResource>
-  <LocaleResource Name="Account.Documents.DueDate">
-    <Value>Due date</Value>
-  </LocaleResource>
   <LocaleResource Name="Account.Documents.Download">
     <Value>Download</Value>
+  </LocaleResource>
+  <LocaleResource Name="Account.Documents.DueDate">
+    <Value>Due date</Value>
   </LocaleResource>
   <LocaleResource Name="Account.Documents.NoExists">
     <Value>Documents not exists</Value>
@@ -804,6 +813,12 @@
   <LocaleResource Name="Account.YourPersonalDetails">
     <Value>Your Personal Details</Value>
   </LocaleResource>
+  <LocaleResource Name="Account.Reviews">
+    <Value>My Reviews</Value>
+  </LocaleResource>
+  <LocaleResource Name="Account.Reviews.NoExists">
+    <Value>You don't have any reviews</Value>
+  </LocaleResource>
   <LocaleResource Name="ActivityLog.AbandonedCart">
     <Value>Send email AbandonedCart - ('{0}')</Value>
   </LocaleResource>
@@ -815,6 +830,12 @@
   </LocaleResource>
   <LocaleResource Name="ActivityLog.AddNewContactAttribute">
     <Value>Added a new contact attribute ('{0}')</Value>
+  </LocaleResource>
+  <LocaleResource Name="ActivityLog.AddNewCourse">
+    <Value>Added a new course ('{0}')</Value>
+  </LocaleResource>
+  <LocaleResource Name="ActivityLog.AddNewCourseLesson">
+    <Value>Added a new lesson ('{0}')</Value>
   </LocaleResource>
   <LocaleResource Name="ActivityLog.AddNewCustomer">
     <Value>Added a new customer (ID = {0})</Value>
@@ -888,6 +909,12 @@
   <LocaleResource Name="ActivityLog.DeleteContactAttribute">
     <Value>Deleted a contact attribute ('{0}')</Value>
   </LocaleResource>
+  <LocaleResource Name="ActivityLog.DeleteCourse">
+    <Value>Deleted a course ('{0}')</Value>
+  </LocaleResource>
+  <LocaleResource Name="ActivityLog.DeleteCourseLesson">
+    <Value>Deleted a lesson ('{0}')</Value>
+  </LocaleResource>
   <LocaleResource Name="ActivityLog.DeleteCustomer">
     <Value>Deleted a customer (ID = {0})</Value>
   </LocaleResource>
@@ -957,6 +984,9 @@
   <LocaleResource Name="ActivityLog.EditContactAttribute">
     <Value>Edited a contact attribute ('{0}')</Value>
   </LocaleResource>
+  <LocaleResource Name="ActivityLog.EditCourse">
+    <Value>Edited a course ('{0}')</Value>
+  </LocaleResource>
   <LocaleResource Name="ActivityLog.EditCustomer">
     <Value>Edited a customer (ID = {0})</Value>
   </LocaleResource>
@@ -992,6 +1022,9 @@
   </LocaleResource>
   <LocaleResource Name="ActivityLog.EditGiftCard">
     <Value>Edited a gift card ('{0}')</Value>
+  </LocaleResource>
+  <LocaleResource Name="ActivityLog.EditLessonCourse">
+    <Value>Edited a lesson ('{0}')</Value>
   </LocaleResource>
   <LocaleResource Name="ActivityLog.EditManufacturer">
     <Value>Edited a manufacturer ('{0}')</Value>
@@ -1103,6 +1136,12 @@
   </LocaleResource>
   <LocaleResource Name="ActivityLog.PublicStore.ViewCategory">
     <Value>Public store. Viewed a category details page ('{0}')</Value>
+  </LocaleResource>
+  <LocaleResource Name="ActivityLog.PublicStore.ViewCourse">
+    <Value>Public store. Viewed a course details page ('{0}')</Value>
+  </LocaleResource>
+  <LocaleResource Name="ActivityLog.PublicStore.ViewLesson">
+    <Value>Public store. Viewed a lesson details page ('{0}')</Value>
   </LocaleResource>
   <LocaleResource Name="ActivityLog.PublicStore.ViewManufacturer">
     <Value>Public store. Viewed a manufacturer details page ('{0}')</Value>
@@ -4776,6 +4815,9 @@
   <LocaleResource Name="Admin.Configuration.ActivityLog.ActivityLog.Fields.Comment">
     <Value>Message</Value>
   </LocaleResource>
+  <LocaleResource Name="Admin.Configuration.ActivityLog.ActivityLog.Fields.Comment.Hint">
+    <Value>The message text for the search.</Value>
+  </LocaleResource>
   <LocaleResource Name="Admin.Configuration.ActivityLog.ActivityLog.Fields.CreatedOn">
     <Value>Created On</Value>
   </LocaleResource>
@@ -6714,6 +6756,12 @@
   <LocaleResource Name="Admin.Configuration.Settings.CustomerUser.HideBackInStockSubscriptionsTab.Hint">
     <Value>Check to hide 'Back in stock subscriptions' tab on 'My account' page</Value>
   </LocaleResource>
+  <LocaleResource Name="Admin.Configuration.Settings.CustomerUser.HideCoursesTab">
+    <Value>Hide 'My courses' tab</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Configuration.Settings.CustomerUser.HideCoursesTab.hint">
+    <Value>Check to hide 'My courses' tab on 'My account' page</Value>
+  </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.CustomerUser.HideDownloadableProductsTab">
     <Value>Hide 'Downloadable products' tab</Value>
   </LocaleResource>
@@ -6875,6 +6923,12 @@
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.CustomerUser.ZipPostalCodeRequired.Hint">
     <Value>Check if 'Zip / postal code' is required.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Configuration.Settings.CustomerUser.HideReviewsTab">
+    <Value>Hide 'My Reviews' tab</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Configuration.Settings.CustomerUser.HideReviewsTab.Hint">
+    <Value>Check to hide 'My Reviews' tab on 'My account' page.</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Configuration.Settings.Filter.Name">
     <Value>Setting Name</Value>
@@ -9441,6 +9495,15 @@
   <LocaleResource Name="Admin.ContentManagement.Blog.Product.Fields.ProductName">
     <Value>Product name</Value>
   </LocaleResource>
+  <LocaleResource Name="Admin.ContentManagement.Course">
+    <Value>Manage courses</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.ContentManagement.Course.Level">
+    <Value>Levels</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.ContentManagement.Course.Manage">
+    <Value>Courses</Value>
+  </LocaleResource>
   <LocaleResource Name="Admin.ContentManagement.Forums">
     <Value>Forums</Value>
   </LocaleResource>
@@ -10404,6 +10467,12 @@
   <LocaleResource Name="Admin.ContentManagement.Topics.Fields.Password.Hint">
     <Value>The password to access the content of this topic</Value>
   </LocaleResource>
+  <LocaleResource Name="Admin.ContentManagement.Topics.Fields.Published">
+    <Value>Published</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.ContentManagement.Topics.Fields.Published.Hint">
+    <Value>Specify if topic should be published or not.</Value>
+  </LocaleResource>
   <LocaleResource Name="Admin.ContentManagement.Topics.Fields.SeName">
     <Value>Search engine friendly page name</Value>
   </LocaleResource>
@@ -10502,6 +10571,266 @@
   </LocaleResource>
   <LocaleResource Name="Admin.ContentManagement.Widgets.Fields.SystemName">
     <Value>System name</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Courses.Course.Acl">
+    <Value>Access control list</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Courses.Course.Added">
+    <Value>The new course has been added successfully.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Courses.Course.AddNew">
+    <Value>Add new course</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Courses.Course.BackToCourse">
+    <Value>Back to the course</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Courses.Course.BackToList">
+    <Value>Back to the list</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Courses.Course.Deleted">
+    <Value>The course has been deleted successfully.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Courses.Course.Edit">
+    <Value>Edit course</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Courses.Course.Fields.AclCustomerRoles">
+    <Value>Customer roles</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Courses.Course.Fields.AclCustomerRoles.Hint">
+    <Value>Select customer roles for which the course will be shown.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Courses.Course.Fields.AvailableStores">
+    <Value>Stores</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Courses.Course.Fields.AvailableStores.Hint">
+    <Value>Select stores for which the course will be shown.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Courses.Course.Fields.Description">
+    <Value>Description</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Courses.Course.Fields.Description.hint">
+    <Value>Enter the description of the course</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Courses.Course.Fields.DisplayOrder">
+    <Value>Display order</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Courses.Course.Fields.DisplayOrder.hint">
+    <Value>Specify the display order of the course</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Courses.Course.Fields.LevelId">
+    <Value>Level</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Courses.Course.Fields.LevelId.hint">
+    <Value>Choose the level of the course</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Courses.Course.Fields.LimitedToStores">
+    <Value>Limited to stores</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Courses.Course.Fields.LimitedToStores.Hint">
+    <Value>Determines whether the course is available only at certain stores.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Courses.Course.Fields.MetaDescription">
+    <Value>Meta description</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Courses.Course.Fields.MetaDescription.hint">
+    <Value>Meta description to be added to course page header</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Courses.Course.Fields.MetaKeywords">
+    <Value>Meta keywords</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Courses.Course.Fields.MetaKeywords.hint">
+    <Value>Meta keywords to be added to course page header.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Courses.Course.Fields.MetaTitle">
+    <Value>Meta title</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Courses.Course.Fields.MetaTitle.hint">
+    <Value>Override the page title. The default is the name of the course.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Courses.Course.Fields.Name">
+    <Value>Name</Value>
+  </LocaleResource>
+  <LocaleResource Name="admin.courses.course.fields.name.hint">
+    <Value>Enter the name of the course</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Courses.Course.Fields.Name.Required">
+    <Value>Field name is Required</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Courses.Course.Fields.PictureId">
+    <Value>Picture</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Courses.Course.Fields.PictureId.hint">
+    <Value>The course picture</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Courses.Course.Fields.ProductId">
+    <Value>Purchased with product</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Courses.Course.Fields.ProductId.Hint">
+    <Value>A customer is added to this course once a specified product is purchased (paid).</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Courses.Course.Fields.ProductId.Assigned">
+    <Value>This product has been assigned to another course</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Courses.Course.Fields.Published">
+    <Value>Published</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Courses.Course.Fields.Published.Hint">
+    <Value>Check to publish this course (visible in store). Uncheck to unpublish (course not available in store).</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Courses.Course.Fields.PurchasedWithProduct.Choose">
+    <Value>Choose product</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Courses.Course.Fields.PurchasedWithProduct.Remove">
+    <Value>Remove</Value>
+  </LocaleResource>  <LocaleResource Name="Admin.Courses.Course.Fields.SeName">
+    <Value>Search engine friendly page name</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Courses.Course.Fields.SeName.hint">
+    <Value>Set a search engine friendly page name e.g. 'the-best-course' to make your page URL 'http://www.yourStore.com/the-best-course'. Leave empty to generate it automatically based on the name of the course.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Courses.Course.Fields.ShortDescription">
+    <Value>Short description</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Courses.Course.Fields.ShortDescription.Hint">
+    <Value>The short description of the course. </Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Courses.Course.Fields.SubjectToAcl">
+    <Value>Subject to ACL</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Courses.Course.Info">
+    <Value>General info</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Courses.Course.Lesson.Added">
+    <Value>The new lesson has been added successfully.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Courses.Course.Lesson.AddNew">
+    <Value>Add new lesson</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Courses.Course.Lesson.Deleted">
+    <Value>The lesson has been deleted successfully.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Courses.Course.Lesson.Edit">
+    <Value>Edit lesson</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Courses.Course.Lesson.Fields.AttachmentId">
+    <Value>Download file</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Courses.Course.Lesson.Fields.AttachmentId.hint">
+    <Value>Enter the URL or upload the attachment for this lesson.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Courses.Course.Lesson.Fields.CourseId.Required">
+    <Value>Field course id is required</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Courses.Course.Lesson.Fields.Description">
+    <Value>Description</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Courses.Course.Lesson.Fields.Description.hint">
+    <Value>Enter the full description of the lesson</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Courses.Course.Lesson.Fields.DisplayOrder">
+    <Value>Display order</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Courses.Course.Lesson.Fields.DisplayOrder.hint">
+    <Value>Specify the display order of the lesson</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Courses.Course.Lesson.Fields.Name">
+    <Value>Name</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Courses.Course.Lesson.Fields.Name.hint">
+    <Value>Enter the name of the lesson</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Courses.Course.Lesson.Fields.Name.Required">
+    <Value>Field name is required</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Courses.Course.Lesson.Fields.PictureId">
+    <Value>Picture</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Courses.Course.Lesson.Fields.PictureId.hint">
+    <Value>Choose the picture of the lesson</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Courses.Course.Lesson.Fields.Published">
+    <Value>Published</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Courses.Course.Lesson.Fields.Published.hint">
+    <Value>Specify if this lesson is published or not.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Courses.Course.Lesson.Fields.ShortDescription">
+    <Value>Short description</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Courses.Course.Lesson.Fields.ShortDescription.hint">
+    <Value>Enter the short description of the lesson</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Courses.Course.Lesson.Fields.SubjectId">
+    <Value>Subject</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Courses.Course.Lesson.Fields.SubjectId.hint">
+    <Value>Choose the subject in which this lesson should appear.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Courses.Course.Lesson.Fields.SubjectId.Required">
+    <Value>Subject is required</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Courses.Course.Lesson.Fields.VideoFile">
+    <Value>Video file</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Courses.Course.Lesson.Fields.VideoFile.hint">
+    <Value>Enter the URL or upload the video for this lesson.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Courses.Course.Lesson.Info">
+    <Value>General info</Value>
+  </LocaleResource>
+  <LocaleResource Name="admin.courses.course.lesson.savebeforeedit">
+    <Value>Save before edit</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Courses.Course.Lesson.Updated">
+    <Value>The lesson has been updated successfully.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Courses.Course.Lessons">
+    <Value>Lessons</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Courses.Course.Manage">
+    <Value>Manage course</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Courses.Course.Permisions">
+    <Value>You can't edit this course, because it can be used in many stores.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Courses.Course.Stores">
+    <Value>Stores</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Courses.Course.Subject.Fields.CourseId.Required">
+    <Value>Field course id required</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Courses.Course.Subject.Fields.DisplayOrder">
+    <Value>Display order</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Courses.Course.Subject.Fields.Name">
+    <Value>Name</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Courses.Course.Subject.Fields.Name.Required">
+    <Value>Field name is required</Value>
+  </LocaleResource>
+  <LocaleResource Name="admin.courses.course.subject.savebeforeedit">
+    <Value>Save before edit</Value>
+  </LocaleResource>
+  <LocaleResource Name="admin.courses.course.subjects">
+    <Value>Subjects</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Courses.Course.Subjects">
+    <Value>Subjects</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Courses.Course.Updated">
+    <Value>The course has been updated successfully.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Courses.Level">
+    <Value>Level</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Courses.Level.Fields.DisplayOrder">
+    <Value>Display order</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Courses.Level.Fields.Name">
+    <Value>Name</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Courses.Level.Fields.Name.Required">
+    <Value>Field name is required</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.CurrentCarts">
     <Value>Current shopping carts</Value>
@@ -12950,8 +13279,7 @@
   </LocaleResource>
   <LocaleResource Name="Admin.Orders.Fields.ID.Hint">
     Gif
-    <Value>The unique ID of this order.</Value>
-  </LocaleResource>
+    <Value>The unique ID of this order.</Value></LocaleResource>
   <LocaleResource Name="Admin.Orders.Fields.MarkAsPaid">
     <Value>Mark as paid</Value>
   </LocaleResource>
@@ -13390,6 +13718,9 @@
   <LocaleResource Name="Admin.Orders.Products.Discount">
     <Value>Discount</Value>
   </LocaleResource>
+  <LocalResource Name="Admin.Orders.Products.Commission">
+    <Value>Commission</Value>
+  </LocalResource>
   <LocaleResource Name="Admin.Orders.Products.Download">
     <Value>Downloadable product</Value>
   </LocaleResource>
@@ -15127,6 +15458,12 @@
   <LocaleResource Name="Admin.ReturnRequests.Info">
     <Value>General info</Value>
   </LocaleResource>
+  <LocaleResource Name="Admin.ReturnRequests.List.EndDate">
+    <Value>End date</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.ReturnRequests.List.EndDate.Hint">
+    <Value>The end date for the search</Value>
+  </LocaleResource>
   <LocaleResource Name="Admin.ReturnRequests.List.GoDirectlyToId">
     <Value>Go directly to return number</Value>
   </LocaleResource>
@@ -15144,6 +15481,12 @@
   </LocaleResource>
   <LocaleResource Name="Admin.ReturnRequests.List.SearchReturnRequestStatus.Hint">
     <Value>Search by a specific return status.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.ReturnRequests.List.StartDate">
+    <Value>Start date</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.ReturnRequests.List.StartDate.Hint">
+    <Value>The start date for the search</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.ReturnRequests.Notified">
     <Value>The customer has been notified successfully.</Value>
@@ -16150,6 +16493,9 @@
   <LocaleResource Name="Admin.Vendors.EditVendorDetails">
     <Value>Edit vendor details</Value>
   </LocaleResource>
+  <LocaleResource Name="Admin.Vendors.Commission">
+    <Value>Commission</Value>
+  </LocaleResource>
   <LocaleResource Name="Admin.Vendors.Fields.Active">
     <Value>Active</Value>
   </LocaleResource>
@@ -16266,6 +16612,15 @@
   </LocaleResource>
   <LocaleResource Name="Admin.Vendors.Fields.Store.hint">
     <Value>A store name for which products of vendor will be available.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Vendors.Fields.Commission">
+    <Value>Commisssion</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Vendors.Fields.Commission.Hint">
+    <Value>Commission percentage rate for each vendor</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Vendors.Fields.Commission.IsCommissionValid">
+    <Value>Commission`s rate is no valid</Value>
   </LocaleResource>
   <LocaleResource Name="Admin.Vendors.Info">
     <Value>Vendor Info</Value>
@@ -17107,6 +17462,12 @@
   <LocaleResource Name="Content.CopyrightNotice">
     <Value>Copyright &amp;copy; {0} {1}. All rights reserved.</Value>
   </LocaleResource>
+  <LocaleResource Name="Course.ApproveLesson">
+    <Value>Approve lesson</Value>
+  </LocaleResource>
+  <LocaleResource Name="Course.GoBack">
+    <Value>Go back to the course</Value>
+  </LocaleResource>
   <LocaleResource Name="Currencies">
     <Value>Currencies</Value>
   </LocaleResource>
@@ -17796,9 +18157,6 @@
   </LocaleResource>
   <LocaleResource Name="Forum.PageTitle.Default">
     <Value>Forums</Value>
-  </LocaleResource>
-  <LocaleResource Name="PageTitle.Documents">
-    <Value>Documents</Value>
   </LocaleResource>
   <LocaleResource Name="Forum.PageTitle.MoveTopic">
     <Value>Move Topic</Value>
@@ -18607,6 +18965,9 @@
   <LocaleResource Name="PageTitle.Blog">
     <Value>Blog</Value>
   </LocaleResource>
+  <LocaleResource Name="PageTitle.Courses">
+    <Value>My courses</Value>
+  </LocaleResource>
   <LocaleResource Name="PageTitle.Checkout">
     <Value>Checkout</Value>
   </LocaleResource>
@@ -18618,6 +18979,9 @@
   </LocaleResource>
   <LocaleResource Name="PageTitle.ContactVendor">
     <Value>Contact Vendor - {0}</Value>
+  </LocaleResource>
+  <LocaleResource Name="PageTitle.Documents">
+    <Value>Documents</Value>
   </LocaleResource>
   <LocaleResource Name="PageTitle.ForumSubscriptions">
     <Value>Forum Subscriptions</Value>

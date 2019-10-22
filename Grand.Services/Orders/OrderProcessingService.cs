@@ -718,6 +718,7 @@ namespace Grand.Services.Orders
                 decimal taxRate;
                 List<AppliedDiscount> scDiscounts;
                 decimal discountAmount;
+                decimal commissionRate;
                 decimal scUnitPrice = (await _priceCalculationService.GetUnitPrice(sc)).unitprice;
                 decimal scUnitPriceWithoutDisc = (await _priceCalculationService.GetUnitPrice(sc, false)).unitprice;
 
@@ -726,6 +727,15 @@ namespace Grand.Services.Orders
                 decimal scSubTotal = subtotal.subTotal;
                 discountAmount = subtotal.discountAmount;
                 scDiscounts = subtotal.appliedDiscounts;
+
+                if (string.IsNullOrEmpty(product.VendorId))
+                {
+                    commissionRate = 0;
+                }
+                else
+                {
+                    commissionRate = (await _vendorService.GetVendorById(product.VendorId)).Commission;
+                }
 
                 var prices = await _taxService.GetTaxProductPrice(product, details.Customer, scUnitPrice, scUnitPriceWithoutDisc, scSubTotal, discountAmount, _taxSettings.PricesIncludeTax);
                 taxRate = prices.taxRate;
@@ -786,6 +796,7 @@ namespace Grand.Services.Orders
                     RentalStartDateUtc = sc.RentalStartDateUtc,
                     RentalEndDateUtc = sc.RentalEndDateUtc,
                     CreatedOnUtc = DateTime.UtcNow,
+                    Commission = Math.Round((commissionRate * scSubTotal / 100), 2),
                 };
 
                 string reservationInfo = "";
@@ -2986,10 +2997,10 @@ namespace Grand.Services.Orders
 
             foreach (var orderItem in order.OrderItems)
             {
-                if (_productService.GetProductById(orderItem.ProductId) != null)
+                var product = await _productService.GetProductById(orderItem.ProductId);
+                if (product != null)
                 {
-                    var product = await _productService.GetProductById(orderItem.ProductId);
-                    if (product != null && product.ProductType == ProductType.SimpleProduct)
+                    if (product.ProductType == ProductType.SimpleProduct)
                     {
                         await _shoppingCartService.AddToCart(customer, orderItem.ProductId,
                             ShoppingCartType.ShoppingCart, order.StoreId, orderItem.WarehouseId,

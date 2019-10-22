@@ -1388,5 +1388,39 @@ namespace Grand.Web.Controllers
         }
 
         #endregion
+
+        #region My account / Reviews
+
+        public virtual async Task<IActionResult> Reviews()
+        {
+            if (!_workContext.CurrentCustomer.IsRegistered())
+                return Challenge();
+
+            if (_customerSettings.HideReviewsTab)
+                return RedirectToRoute("CustomerInfo");
+
+            var model = await _customerViewModelService.PrepareReviews(_workContext.CurrentCustomer);
+
+            return View(model);
+        }
+
+        #endregion
+
+        #region My account / Reviews
+
+        public virtual async Task<IActionResult> Courses()
+        {
+            if (!_workContext.CurrentCustomer.IsRegistered())
+                return Challenge();
+
+            if (_customerSettings.HideCoursesTab)
+                return RedirectToRoute("CustomerInfo");
+
+            var model = await _customerViewModelService.PrepareCourses(_workContext.CurrentCustomer, _storeContext.CurrentStore);
+
+            return View(model);
+        }
+
+        #endregion
     }
 }

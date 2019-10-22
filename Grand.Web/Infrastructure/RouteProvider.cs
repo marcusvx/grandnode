@@ -405,9 +405,15 @@ namespace Grand.Web.Infrastructure
             routeBuilder.MapLocalizedRoute("CustomerDocuments",
                             "customer/documents",
                             new { controller = "Customer", action = "Documents" });
+            routeBuilder.MapLocalizedRoute("CustomerCourses",
+                            "customer/courses",
+                            new { controller = "Customer", action = "Courses" });
             routeBuilder.MapLocalizedRoute("AccountActivation",
                             "customer/activation",
                             new { controller = "Customer", action = "AccountActivation" });
+            routeBuilder.MapLocalizedRoute("CustomerReviews",
+                            "customer/reviews",
+                            new { controller = "Customer", action = "Reviews" });
             routeBuilder.MapLocalizedRoute("CustomerForumSubscriptions",
                             "boards/forumsubscriptions",
                             new { controller = "Boards", action = "CustomerForumSubscriptions" });

@@ -7,6 +7,7 @@ using Grand.Core.Domain.Localization;
 using Grand.Core.Domain.Media;
 using Grand.Core.Domain.Orders;
 using Grand.Core.Domain.Security;
+using Grand.Core.Domain.Stores;
 using Grand.Core.Domain.Tax;
 using Grand.Core.Domain.Vendors;
 using Grand.Framework.Security.Captcha;
@@ -651,7 +652,8 @@ namespace Grand.Web.Services
             model.HideAuctions = _customerSettings.HideAuctionsTab;
             model.HideNotes = _customerSettings.HideNotesTab;
             model.HideDocuments = _customerSettings.HideDocumentsTab;
-
+            model.HideReviews = _customerSettings.HideReviewsTab;
+            model.HideCourses = _customerSettings.HideCoursesTab;
             if (_vendorSettings.AllowVendorsToEditInfo && _workContext.CurrentVendor != null)
             {
                 model.ShowVendorInfo = true;
@@ -829,5 +831,44 @@ namespace Grand.Web.Services
             }
             return model;
         }
+
+        public virtual async Task<CustomerProductReviewsModel> PrepareReviews(Customer customer)
+        {
+            var reviewsModel = new CustomerProductReviewsModel();
+
+            reviewsModel.CustomerId = customer.Id;
+            reviewsModel.CustomerInfo = customer != null ? customer.IsRegistered() ? customer.Email : _localizationService.GetResource("Admin.Customers.Guest") : "";
+
+            var productReviews = await _productService.GetAllProductReviews(customer.Id);
+            foreach (var productReview in productReviews)
+            {
+                var product = await _productService.GetProductById(productReview.ProductId);
+
+                var reviewModel = new CustomerProductReviewModel();
+
+                reviewModel.Id = productReview.Id;
+                reviewModel.ProductId = productReview.ProductId;
+                reviewModel.ProductName = product.Name;
+                reviewModel.ProductSeName = product.GetSeName(_workContext.WorkingLanguage.Id);
+                reviewModel.Rating = productReview.Rating;
+                reviewModel.CreatedOn = _dateTimeHelper.ConvertToUserTime(productReview.CreatedOnUtc, DateTimeKind.Utc);
+                reviewModel.Signature = productReview.Signature;
+                reviewModel.ReviewText = productReview.ReviewText;
+                reviewModel.ReplyText = productReview.ReplyText;
+                reviewModel.IsApproved = productReview.IsApproved;
+
+                reviewsModel.Reviews.Add(reviewModel);
+            }
+
+            return reviewsModel;
+        }
+
+        public virtual async Task<CoursesModel> PrepareCourses(Customer customer, Store store)
+        {
+            var courseService = _serviceProvider.GetRequiredService<ICourseViewModelService>();
+            var model = await courseService.GetCoursesByCustomer(customer, store.Id);
+            return model;
+        }
+
     }
 }

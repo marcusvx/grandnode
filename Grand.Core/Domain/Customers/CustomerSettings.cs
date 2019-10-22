@@ -194,6 +194,16 @@ namespace Grand.Core.Domain.Customers
         /// </summary>
         public int PasswordLifetime { get; set; }
 
+        /// <summary>
+        /// Gets or sets a value indicating whether to hide 'Reviews' tab on 'My account' page
+        /// </summary>
+        public bool HideReviewsTab { get; set; }
+
+        /// <summary>
+        /// Gets or sets a value indicating whether to hide 'Courses' tab on 'My account' page
+        /// </summary>
+        public bool HideCoursesTab { get; set; }
+
         #region Form fields
 
         /// <summary>

@@ -11,6 +11,7 @@ using Grand.Core.Domain.Messages;
 using Grand.Core.Domain.Orders;
 using Grand.Core.Domain.PushNotifications;
 using Grand.Core.Domain.Security;
+using Grand.Core.Domain.Seo;
 using Grand.Core.Domain.Shipping;
 using Grand.Core.Domain.Tasks;
 using Grand.Core.Domain.Topics;
@@ -806,7 +807,18 @@ namespace Grand.Services.Installation
                     Enabled = false,
                     Name = "Delete document type"
                 });
-
+            await _activityLogTypeRepository.InsertAsync(
+                new ActivityLogType {
+                    SystemKeyword = "PublicStore.ViewCourse",
+                    Enabled = false,
+                    Name = "Public store. View a course"
+                });
+            await _activityLogTypeRepository.InsertAsync(
+                new ActivityLogType {
+                    SystemKeyword = "PublicStore.ViewLesson",
+                    Enabled = false,
+                    Name = "Public store. View a lesson"
+                });
             #endregion
 
             #region Update customer settings
@@ -814,7 +826,31 @@ namespace Grand.Services.Installation
             var _settingService = _serviceProvider.GetRequiredService<ISettingService>();
             var customerSettings = _serviceProvider.GetRequiredService<CustomerSettings>();
             customerSettings.HideDocumentsTab = true;
+            customerSettings.HideReviewsTab = false;
+            customerSettings.HideCoursesTab = true;
             await _settingService.SaveSetting(customerSettings);
+
+            #endregion
+
+            #region Update topics
+
+            IRepository<Topic> _topicRepository = _serviceProvider.GetRequiredService<IRepository<Topic>>();
+            foreach (var topic in _topicRepository.Table)
+            {
+                topic.Published  = true;
+                _topicRepository.Update(topic);
+            }
+
+            #endregion
+
+            #region Update url seo to lowercase
+
+            IRepository<UrlRecord> _urlRecordRepository = _serviceProvider.GetRequiredService<IRepository<UrlRecord>>();
+            foreach (var urlrecord in _urlRecordRepository.Table)
+            {
+                urlrecord.Slug = urlrecord.Slug.ToLowerInvariant();
+                _urlRecordRepository.Update(urlrecord);
+            }
 
             #endregion
 

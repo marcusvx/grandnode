@@ -306,7 +306,7 @@ namespace Grand.Web.Areas.Admin.Services
 
             //customer roles
             model.AvailableCustomerRoles.Add(new SelectListItem { Text = _localizationService.GetResource("Admin.Common.All"), Value = " " });
-            foreach (var role in await _customerService.GetAllCustomerRoles(true))
+            foreach (var role in await _customerService.GetAllCustomerRoles(showHidden: true))
                 model.AvailableCustomerRoles.Add(new SelectListItem { Text = role.Name, Value = role.Id.ToString() });
         }
         public virtual async Task PrepareProductAttributeValueModel(Product product, ProductModel.ProductAttributeValueModel model)
@@ -436,6 +436,7 @@ namespace Grand.Web.Areas.Admin.Services
                 }
 
                 //reservation
+                model.CalendarModel.ProductId = product.Id;
                 model.CalendarModel.Interval = product.Interval;
                 model.CalendarModel.IntervalUnit = product.IntervalUnitId;
                 model.CalendarModel.IncBothDate = product.IncBothDate;
